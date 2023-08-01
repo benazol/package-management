@@ -27,20 +27,20 @@ sudo yum install wget unzip -y
 ## Install Tomcat version 9.0.73
 ### Download and extract the tomcat server
 ``` sh
-sudo wget https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.11/bin/apache-tomcat-10.1.11.zip
-sudo unzip apache-tomcat-10.1.11.zip
-sudo rm -rf apache-tomcat-10.1.11.zip
+sudo wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.78/bin/apache-tomcat-9.0.78.zip
+sudo unzip apache-tomcat-9.0.78.zip
+sudo rm -rf apache-tomcat-9.0.78.zip
 ### rename tomcat for good naming convention
-sudo mv apache-tomcat-10.1.11 tomcat10
+sudo mv apache-tomcat-9.0.78 tomcat10
 ### assign executable permissions to the tomcat home directory
 sudo chmod 777 -R /opt/tomcat9
-sudo chown ec2-user -R /opt/tomcat10
+sudo chown ec2-user -R /opt/tomcat9
 ### start tomcat
-sh /opt/tomcat10/bin/startup.sh
+sh /opt/tomcat9/bin/startup.sh
 # create a soft link to start and stop tomcat
 # This will enable us to manage tomcat as a service
-sudo ln -s /opt/tomcat10/bin/startup.sh /usr/bin/starttomcat
-sudo ln -s /opt/tomcat10/bin/shutdown.sh /usr/bin/stoptomcat
+sudo ln -s /opt/tomcat9/bin/startup.sh /usr/bin/starttomcat
+sudo ln -s /opt/tomcat9/bin/shutdown.sh /usr/bin/stoptomcat
 starttomcat
 sudo su - ec2-user
 ```
